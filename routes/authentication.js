@@ -76,4 +76,8 @@ module.exports = function(app, models) {
     }
     res.render('resetPasswordSuccess.jade');
   });
+
+  app.get('/about', function(req, res) {
+      return;
+  })
 }

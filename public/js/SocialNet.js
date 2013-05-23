@@ -1,6 +1,5 @@
-define(['router', 'SocialNetSockets'], function(router, socket) {
+define(['router'], function(router, socket) {
   var initialize = function() {
-    socket.initialize(router.socketEvents);
     checkLogin(runApplication);
   };
 

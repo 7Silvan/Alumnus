@@ -1,30 +1,50 @@
-<h1>Login</h1>
+<div class="container-narrow">
 
-<form>
-<fieldset>
-  <legend>Credentials</legend>
+    <div class="masthead">
+        <ul class="nav nav-pills pull-right">
+            <li class="active"><a href="/">Домашня</a></li>
+            <li><a href="about.html">Про нас</a></li>
+            <li><a href="contact.html">Контакти</a></li>
+        </ul>
+        <a href="http://sumdu.edu.ua"><img class="logo" src="img/res/logo_sumdu_top.png"></a>
+        <a href="/" class="no-text-decoration"><h3 class="muted">СумДУ Випускник</h3></a>
+    </div>
 
-  <p class="error" id="error"></p>
+    <hr>
 
-  <label>
-    Email:
-    <input type="text" name="email">
-  </label>
+    <div class="jumbotron" id="index">
+        <img class="head-small-logo" src="img/res/student-hat.png">
+        <h1>АІС Випускник!</h1>
+        <p class="lead main-lead">Ми сподіваємось що наша система допоможе зорієнтувати всі зусилля університету для підготовки спеціалістів, яких потребує сучасний ринок праці. Ваша оцінка сприятиме покращенню освітньої програми СумДУ.</p>
+        <!-- <a class="btn btn-large btn-success" href="#">Sign up today</a> -->
+        <form class="form-signin" action="account.html">
+            <h2 class="form-signin-heading">Будь-ласка, авторизуйтесь</h2>
+            <p class="error" id="error"></p>
+            <div class="input-prepend">
+                <span class="add-on"><i class="icon-envelope"></i></span>
+                <input type="text" class="input-block-level" placeholder="Email" x-webkit-speech="">
+            </div>
+            <div class="input-prepend">
+                <span class="add-on"><i class="icon-pencil"></i></span>
+                <input type="password" class="input-block-level" placeholder="Пароль" x-webkit-speech="">
+            </div>
+            <label class="checkbox">
+                <input type="checkbox" value="remember-me" x-webkit-speech=""> Запам'ятати
+            </label>
+            <button class="btn btn-small btn-primary" type="submit">Увійти</button>
+        </form>
+    </div>
 
-  <br />
+    <ul>
+        <li><a href="#forgotpassword">Forgot Password?</a></li>
+        <li><a href="#register">Sign Up</a></li>
+    </ul>
 
-  <label>
-    Password:
-    <input type="password" name="password">
-  </label>
+    <hr>
 
-  <br />
+    <div class="footer">
+        <p class="text">© Сумський Державний Університет 2013</p>
+        <p class="mail"><a href="#"><i class="icon-envelope"></i></a></p>
+    </div>
 
-  <input type="submit" value="Login Now">
-</fieldset>
-</form>
-
-<ul>
-  <li><a href="#forgotpassword">Forgot Password?</a></li>
-  <li><a href="#register">Sign Up</a></li>
-</ul>
+</div> <!-- /container -->

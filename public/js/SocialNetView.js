@@ -1,7 +1,7 @@
 define(function(require) {
-  var SocialNetView = Backbone.View.extend({
+  var AlumnusView = Backbone.View.extend({
     requireLogin: true
   });
 
-  return SocialNetView;
+  return AlumnusView;
 });

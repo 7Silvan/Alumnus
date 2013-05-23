@@ -37,7 +37,7 @@ var models = {
 };
 
 app.configure(function(){
-  app.sessionSecret = 'SocialNet secret key';
+  app.sessionSecret = 'Alumnus secret key';
   app.set('view engine', 'jade');
   app.use(express.static(__dirname + '/public'));
   app.use(express.limit('1mb'));
@@ -80,6 +80,5 @@ app.post('/contacts/find', function(req, res) {
   });
 });
 
-// New in Chapter 9 - the server listens, instead of the app
 app.server.listen(8080);
-console.log("SocialNet is listening to port 8080.");
+console.log("listening to port 8080.");

@@ -1,11 +1,25 @@
 !!! 5
 html(lang="en")
   head
-    title Social Network
+    title Випускник - СумДУ
+    meta(charset='utf-8')
+      //styles
     link(rel='stylesheet',href='/styles/styles.css')
+    link(rel='stylesheet',href='/styles/bootstrap.css')
+    link(rel='stylesheet',href='/styles/bootstrap-responsive.css')
+    link(rel='stylesheet',href='/styles/custom.css')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(name='description', content='Освітня програма СумДу')
+    meta(name='author', conten='Sumdu')
+      //fav icon
+    link(class='shortcut icon', href='/images/ico/favicon.png')
+
+      // if lt IE 9
+            script(type='text/javascript', src='/js/libs/html5shiv.js')
   body
     block content
     
-    div#chat
+    //div#chat
     
     block scripts
+    div(id="sbi_camera_button",class="sbi_search",style="left:0px;top:0px;position:absolute;width:29px;height:27px;border:none;margin:0px 0px 0px 0px;padding:0px 0px 0px 0px;z-index:2147483647;display:none;")
