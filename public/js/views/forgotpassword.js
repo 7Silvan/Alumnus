@@ -1,5 +1,5 @@
-define(['SocialNetView', 'text!templates/forgotpassword.html'], function(SocialNetView, forgotpasswordTemplate) {
-  var forgotpasswordView = SocialNetView.extend({
+define(['AlumnusView', 'text!templates/forgotpassword.html'], function(AlumnusView, forgotpasswordTemplate) {
+  var forgotpasswordView = AlumnusView.extend({
     requireLogin: false,
 
     el: $('#content'),

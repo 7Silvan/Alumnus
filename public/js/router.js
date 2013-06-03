@@ -1,8 +1,8 @@
-define(['views/index', 'views/register', 'views/login',
+define(['views/index', 'views/about', 'views/mailUs', 'views/register', 'views/login',
         'views/forgotpassword', 'views/profile',
         'models/Account'],
-function(IndexView, RegisterView, LoginView, ForgotPasswordView, ProfileView, Account) {
-  var SocialRouter = Backbone.Router.extend({
+function(IndexView, AboutView, MailUsView, RegisterView, LoginView, ForgotPasswordView, ProfileView, Account) {
+  var AlumnusRouter = Backbone.Router.extend({
     currentView: null,
 
     socketEvents: _.extend({}, Backbone.Events),
@@ -12,7 +12,9 @@ function(IndexView, RegisterView, LoginView, ForgotPasswordView, ProfileView, Ac
       'login': 'login',
       'register': 'register',
       'forgotpassword': 'forgotpassword',
-      'profile/:id': 'profile'
+      'profile/:id': 'profile',
+      'about': 'about',
+      'mailUs': 'mailUs'
     },
 
     changeView: function(view) {
@@ -24,17 +26,19 @@ function(IndexView, RegisterView, LoginView, ForgotPasswordView, ProfileView, Ac
     },
 
     index: function() {
-      var statusCollection = new StatusCollection();
-      statusCollection.url = '/accounts/me/activity';
-      this.changeView(new IndexView({
-        collection: statusCollection,
-        socketEvents:this.socketEvents
-      }));
-      statusCollection.fetch();
+      this.changeView(new IndexView());
+    },
+
+    about: function() {
+      this.changeView(new AboutView());
     },
 
     addcontact: function() {
       this.changeView(new AddContactView());
+    },
+
+    mailUs: function() {
+        this.changeView(new MailUsView());
     },
 
     login: function() {
@@ -53,19 +57,9 @@ function(IndexView, RegisterView, LoginView, ForgotPasswordView, ProfileView, Ac
       var model = new Account({id:id});
       this.changeView(new ProfileView({model:model, socketEvents:this.socketEvents}));
       model.fetch();
-    },
-
-    contacts: function(id) {
-      var contactId = id ? id : 'me';
-      var contactsCollection = new ContactCollection();
-      contactsCollection.url = '/accounts/' + contactId + '/contacts';
-      this.changeView(new ContactsView({
-        collection: contactsCollection
-      }));
-      contactsCollection.fetch();
     }
   });
 
-  return new SocialRouter();
+  return new AlumnusRouter();
 });
 

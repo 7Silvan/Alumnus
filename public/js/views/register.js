@@ -1,5 +1,5 @@
-define(['SocialNetView', 'text!templates/register.html'], function(SocialNetView, registerTemplate) {
-  var registerView = SocialNetView.extend({
+define(['AlumnusView', 'text!templates/register.html'], function(AlumnusView, registerTemplate) {
+  var registerView = AlumnusView.extend({
     requireLogin: false,
 
 	el: $('#content'),

@@ -1,37 +1,6 @@
 module.exports = function(app, config, mongoose, nodemailer) {
   var crypto = require('crypto');
 
-  var Status = new mongoose.Schema({
-    name: {
-      first:   { type: String },
-      last:    { type: String }
-    },
-    status:    { type: String }
-  });
-
-  var schemaOptions = {
-    toJSON: {
-      virtuals: true	
-    },
-    toObject: {
-      virtuals: true
-    }
-  };
-
-  var Contact = new mongoose.Schema({
-    name: {
-      first:   { type: String },
-      last:    { type: String }
-    },
-    accountId: { type: mongoose.Schema.ObjectId },
-    added:     { type: Date },     // When the contact was added
-    updated:   { type: Date }      // When the contact last updated
-  }, schemaOptions);
-
-  Contact.virtual('online').get(function(){
-    return app.isAccountOnline(this.get('accountId'));
-  });
-
   var AccountSchema = new mongoose.Schema({
     email:     { type: String, unique: true },
     password:  { type: String },
@@ -46,10 +15,7 @@ module.exports = function(app, config, mongoose, nodemailer) {
       year:    { type: Number }
     },
     photoUrl:  { type: String },
-    biography: { type: String },
-    contacts:  [Contact],
-    status:    [Status], // My own status updates only
-    activity:  [Status]  //  All status updates including friends
+    biography: { type: String }
   });
 
   var Account = mongoose.model('Account', AccountSchema);
@@ -82,7 +48,7 @@ module.exports = function(app, config, mongoose, nodemailer) {
         smtpTransport.sendMail({
           from: 'thisapp@example.com',
           to: doc.email,
-          subject: 'SocialNet Password Request',
+          subject: 'Alumnus Password Request',
           text: 'Click here to reset your password: ' + resetPasswordUrl
         }, function forgotPasswordResult(err) {
           if (err) {
@@ -119,44 +85,6 @@ module.exports = function(app, config, mongoose, nodemailer) {
     });
   };
 
-  var addContact = function(account, addcontact) {
-    contact = {
-      name: addcontact.name,
-      accountId: addcontact._id,
-      added: new Date(),
-      updated: new Date()
-    };
-    account.contacts.push(contact);
-
-    account.save(function (err) {
-      if (err) {
-        console.log('Error saving account: ' + err);
-      }
-    });
-  };
-
-  var removeContact = function(account, contactId) {
-    if ( null == account.contacts ) return;
-
-    account.contacts.forEach(function(contact) {
-      if ( contact.accountId == contactId ) {
-        account.contacts.remove(contact);
-      }
-    });
-    account.save();
-  };
-
-  var hasContact = function(account, contactId) {
-    if ( null == account.contacts ) return false;
-
-    account.contacts.forEach(function(contact) {
-      if ( contact.accountId == contactId ) {
-        return true;
-      }
-    });
-    return false;
-  };
-
   var register = function(email, password, firstName, lastName) {
     var shaSum = crypto.createHash('sha256');
     shaSum.update(password);
@@ -178,12 +106,9 @@ module.exports = function(app, config, mongoose, nodemailer) {
   return {
     findById: findById,
     register: register,
-    hasContact: hasContact,
     forgotPassword: forgotPassword,
     changePassword: changePassword,
     findByString: findByString,
-    addContact: addContact,
-    removeContact: removeContact,
     login: login,
     Account: Account
   }

@@ -8,15 +8,15 @@ require.config({
     text: '/js/libs/text',
     templates: '../templates',
 
-    SocialNetView: '/js/SocialNetView'
+    AlumnusView: '/js/AlumnusView'
   },
 
   shim: {
     'Backbone': ['Underscore', 'jQuery'],
-    'SocialNet': ['Backbone']
+    'Alumnus': ['Backbone']
   }
 });
 
-require(['SocialNet'], function(SocialNet) {
-  SocialNet.initialize();
+require(['Alumnus'], function(Alumnus) {
+  Alumnus.initialize();
 });

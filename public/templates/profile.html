@@ -1,14 +1,73 @@
-<h1><%=name.first %> <%= name.last %></h1>
+<div class="container-narrow">
 
-<form>
-  <fieldset>
-    <legend>Add Status</legend>
+    <div class="masthead">
+        <ul class="nav nav-pills pull-right">
+            <li><a href="#login">Домашня</a></li>
+            <li class="active"><a href="#profile">Аккаунт</a></li>
+            <li><a href="#about">Про нас</a></li>
+            <li><a href="#mailUs">Контакти</a></li>
+        </ul>
+        <a href="http://sumdu.edu.ua"><img class="logo" src="img/res/logo_sumdu_top.png"></a>
+        <a href="#login" class="no-text-decoration"><h3 class="muted">СумДУ Випускник</h3></a>
+    </div>
 
-    <input type="text" name="status" />
-    <input type="submit" value="Add" />
-  </fieldset>
-</form>
+    <hr>
 
-<h2>Status Updates</h2>
+    <div class="jumbotron" id="account">
+        <img class="head-small-logo" src="img/res/student-hat.png">
+        <h1>АІС Випускник!</h1>
+        <h4>На цій сторінці ви можете перевірити чи змінити свої персональні дані, а також перейти до опитування.</h4>
+        <div class="row-fluid user-detail-info">
+            <form id="form-account">
+                <div class="span3">
+                    <div><img src="img/res/logo_sumdu.png" class="img-polaroid img-rounded user-image"></div>
+                    <div><button class="btn btn-danger user-ava-fake" onclick="$('.user-ava').click();">Змінити фото...</button><input class="user-ava" type="file" name="ava"></div>
+                </div>
+                <div class="span7">
+                    <div class="form-signin">
+                        <div class="input-prepend">
+                            <span class="add-on"><i class="icon-envelope"></i></span>
+                            <input type="text" class="input-block-level" placeholder="Email">
+                        </div>
+                        <div class="input-prepend">
+                            <span class="add-on"><i class="icon-bell"></i></span>
+                            <input type="text" class="input-block-level" placeholder="Телефон">
+                        </div>
+                        <div class="input-prepend">
+                            <span class="add-on"><i class="icon-user"></i></span>
+                            <input type="text" class="input-block-level" placeholder="Ім'я">
+                        </div>
+                        <div class="input-prepend">
+                            <span class="add-on"><i class="icon-star"></i></span>
+                            <input type="text" class="input-block-level" placeholder="Прізвище">
+                        </div>
+                    </div>
+                </div>
+                <div class="span2">
+                    <button class="btn btn-primary" type="submit">Зберегти зміни</button>
 
-<ul class="status_list" />
+                    <button class="btn btn-success">Що далі робтити ?</button>
+
+                    <button class="btn btn-success">Надіслати листа</button>
+                </div>
+            </form>
+            <div>
+                <a href="#test"><button class="btn btn-primary go-list-btn">Перейти до опитування <strong>&rarr;</strong></button></a></div>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="footer">
+        <p class="text">© Сумський Державний Університет 2013</p>
+        <p class="mail"><a href="#"><i class="icon-envelope"></i></a></p>
+    </div>
+
+</div> <!-- /container -->
+
+<!-- Le javascript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="js/jquery.js"></script>
+
+<div id="sbi_camera_button" class="sbi_search" style="left:0px;top:0px;position:absolute;width:29px;height:27px;border:none;margin:0px 0px 0px 0px;padding:0px 0px 0px 0px;z-index:2147483647;display:none;"></div></body></html>
