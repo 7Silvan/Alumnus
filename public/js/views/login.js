@@ -17,9 +17,9 @@ define(['AlumnusView', 'text!templates/login.html'], function(AlumnusView, login
       $.post('/login',
         this.$('form').serialize(), function(data) {
           socketEvents.trigger('app:loggedin', data);
-          window.location.hash = 'index';
+          window.location.hash = 'profile';
       }).error(function(){
-        $("#error").text('Unable to login.');
+        $("#error").text('Неможливо ввійти.');
         $("#error").slideDown();
       });
       return false;

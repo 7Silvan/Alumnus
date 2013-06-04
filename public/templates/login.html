@@ -15,36 +15,32 @@
     <div class="jumbotron" id="index">
         <img class="head-small-logo" src="img/res/student-hat.png">
         <h1>АІС Випускник!</h1>
-        <p class="lead main-lead">Ми сподіваємось що наша система допоможе зорієнтувати всі зусилля університету для підготовки спеціалістів, яких потребує сучасний ринок праці. Ваша оцінка сприятиме покращенню освітньої програми СумДУ.</p>
+        <p class="lead main-lead">Ми сподіваємось, що наша система допоможе зорієнтувати всі зусилля університету для підготовки спеціалістів, яких потребує сучасний ринок праці. Ваша оцінка сприятиме покращенню освітньої програми СумДУ.</p>
         <!-- <a class="btn btn-large btn-success" href="#">Sign up today</a> -->
-        <form class="form-signin" action="account.html">
+        <form class="form-signin" action="/login">
             <h2 class="form-signin-heading">Будь-ласка, авторизуйтесь</h2>
             <p class="error" id="error"></p>
             <div class="input-prepend">
                 <span class="add-on"><i class="icon-envelope"></i></span>
-                <input type="text" class="input-block-level" placeholder="Email" x-webkit-speech="">
+                <input name="email" type="text" class="input-block-level" placeholder="Email" x-webkit-speech="">
             </div>
             <div class="input-prepend">
                 <span class="add-on"><i class="icon-pencil"></i></span>
-                <input type="password" class="input-block-level" placeholder="Пароль" x-webkit-speech="">
+                <input name="password" type="password" class="input-block-level" placeholder="Пароль" x-webkit-speech="">
             </div>
             <label class="checkbox">
-                <input type="checkbox" value="remember-me" x-webkit-speech=""> Запам'ятати
+                <input name="remember-me" type="checkbox" value="remember-me" x-webkit-speech=""> Запам'ятати
             </label>
             <button class="btn btn-small btn-primary" type="submit">Увійти</button>
         </form>
     </div>
-
     <ul>
-        <li><a href="#forgotpassword">Forgot Password?</a></li>
-        <li><a href="#register">Sign Up</a></li>
+        <li><a href="#forgotpassword">Забули пароль?</a></li>
+        <li><a href="#register">Зареєструватись</a></li>
     </ul>
-
     <hr>
-
     <div class="footer">
         <p class="text">© Сумський Державний Університет 2013</p>
         <p class="mail"><a href="#"><i class="icon-envelope"></i></a></p>
     </div>
-
 </div> <!-- /container -->

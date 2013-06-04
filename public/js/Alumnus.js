@@ -18,7 +18,7 @@ define(['router'], function(router, socket) {
 
   var runApplication = function(authenticated) {
     if (authenticated) {
-      window.location.hash = 'index';
+      window.location.hash = 'profile';
     } else {
       window.location.hash = 'login';
     }

@@ -55,7 +55,7 @@ function(IndexView, AboutView, MailUsView, RegisterView, LoginView, ForgotPasswo
 
     profile: function(id) {
       var model = new Account({id:id});
-      this.changeView(new ProfileView({model:model, socketEvents:this.socketEvents}));
+      this.changeView(new ProfileView({model:model}));
       model.fetch();
     }
   });
