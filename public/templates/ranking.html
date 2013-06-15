@@ -1,0 +1,77 @@
+<!--TODO finish-->
+<div class="container-narrow">
+
+<div class="masthead">
+    <ul class="nav nav-pills pull-right">
+        <li class="active"><a href="#login">Домашня</a></li>
+        <li><a href="#profile">Аккаунт</a></li>
+        <li><a href="#about">Про нас</a></li>
+        <li><a href="#mailUs">Контакти</a></li>
+    </ul>
+    <a href="http://sumdu.edu.ua"><img class="logo" src="img/res/logo_sumdu_top.png"></a>
+    <a href="#" class="no-text-decoration"><h3 class="muted">СумДУ Випускник</h3></a>
+</div>
+
+<hr>
+
+<div class="jumbotron" id="test">
+<img class="head-small-logo" src="img/res/student-hat.png">
+<h1>АІС Випускник!</h1>
+<p class="lead">
+    Кафедра комп'ютерних пропонує, на основі набутого Вами професійного досвіду
+    дати оцінку змістовним модулям навчальних дисциплін Сумського Державного Університету
+    спеціальності Інформатика за 100 бальною шкалою. Ці дані кафедра використає з метою адаптації навчального
+    плану до потреб регіонального ринку праці в галузі інформаційих технологій.
+</p>
+
+<div class="modules-acordion">
+<div class="accordion" id="accordion">
+</div>
+</div>
+    <script type="text/javascript">
+        function fillRanking(){
+            var rankArray = <%!{JSON.parse(rankingList)}%>;
+            alert("inside fillranking");
+            var divElement = document.getElementById("accordion");
+            for(var i = 0; i< rankArray.length; i++){
+                divElements.innerHTML += '<div class="accordion-group">' +
+                        '<div class="accordion-heading">' +
+                        '<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse-1">' +
+                        '<%rankArray[i].label%>' +
+                        '</a></div><div id="collapse-1" class="accordion-body collapse in">' +
+                        '<div class="accordion-inner">' +
+                        '<div>' +
+                        '<label for="slider-1"><i class="icon-thumbs-down slider-icon-like"></i> Оцінка <i class="icon-thumbs-up slider-icon-dislike"></i></label>' +
+                        '<input type="range" name="'+ i +'" id="'+i+'" value="46" min="0" max="100" />' +
+                        '</div></div></div></div>'
+            }
+        }
+
+        fillRanking();
+    </script>
+
+<button type="button" class="btn btn-primary" id="modules-calculate-btn">Відправити результати</button>
+</div>
+
+<hr>
+
+<div class="footer">
+    <p class="text">© Сумський Державний Університет 2013</p>
+    <p class="mail"><a href="#"><i class="icon-envelope"></i></a></p>
+</div>
+
+</div> <!-- /container -->
+
+<!-- Le javascript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="js/jquery.js"></script>
+<script src="js/jquery.mobile-1.3.1.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script>
+    $(function(){
+        $(".collapse").collapse();
+    });
+</script>
+
+<div id="sbi_camera_button" class="sbi_search" style="left:0px;top:0px;position:absolute;width:29px;height:27px;border:none;margin:0px 0px 0px 0px;padding:0px 0px 0px 0px;z-index:2147483647;display:none;"></div>

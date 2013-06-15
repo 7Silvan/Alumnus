@@ -77,6 +77,21 @@ module.exports = function(app, models) {
     res.render('resetPasswordSuccess.jade');
   });
 
+  app.get('/ranking', function(req, res) {
+     var rankingList = models.Module.getModuleList();
+     res.render('ranking.jade', {
+         ranking: JSON.stringify(rankingList)
+     });
+  });
+
+  app.post('/ranking', function(req, res) {
+      var rankingList = req.param('ranking', null);
+      if (null != rankingList) {
+          models.Rank.addSurveyResult(rankingList);
+      }
+      res.render('thankYouForSurver.jade');
+  });
+
   app.get('/about', function(req, res) {
       return;
   })
